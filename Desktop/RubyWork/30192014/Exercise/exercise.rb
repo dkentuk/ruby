@@ -9,7 +9,7 @@ class Person
     def initialize(fname, sname, ddob)
         @first_name = fname
         @surname = sname
-        @dob = ddob
+        @dob = Date.parse(ddob)
         @full_name = fname + ' ' + sname
         @emails = Array.new
         @phone_numbers = Array.new
@@ -50,15 +50,32 @@ class Person
         name_length = @full_name.length
         
         #format
+        puts("\n")
         puts(@full_name)
         puts ("-") * name_length
-        puts(@dob)
+        puts("Date of Birth: " + @dob.strftime("%d/%B/%Y"))
         puts("\n")
         puts("Email Addresses: ")
-        @emails.each {|x| puts x, "-" }
-        
+        @emails.each {|x| puts "- #{x}"}
+        puts("\n")
+        puts("Phone Number: ")
+        @phone_numbers.each {|i| puts "- #{i}"}
+        puts("\n")
+            
     end
     
+end
+
+class FamilyMember < Person
+
+    #FamilyMmember stand alone variables
+    attr_accessor :relationship_status
+    
+    #initlilize the code
+    def initilize(p_rstatus)
+        @relationship_status = p_rstatus
+        super
+    end
 end
 
 binding.pry
