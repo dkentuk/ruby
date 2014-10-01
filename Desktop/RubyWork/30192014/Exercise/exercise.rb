@@ -61,6 +61,7 @@ class Person
         puts("Phone Number: ")
         @phone_numbers.each {|i| puts "- #{i}"}
         puts("\n")
+        return nil
             
     end
     
@@ -72,10 +73,25 @@ class FamilyMember < Person
     attr_accessor :relationship_status
     
     #initlilize the code
-    def initilize(p_rstatus)
+    
+    def initialize(fname, sname, ddob, p_rstatus = nil)
         @relationship_status = p_rstatus
-        super
+        super(fname, sname, ddob)
     end
+    
+        # returns the persons information
+#    def to_s
+#        "Thier Relationship is: #{@relationship_status }."
+#    end
+    
+#    def initialize(fname, sname, ddob)
+#        @relationship_status = nil
+#        super
+#    end
+#
+#    def add_relationship(r_pass)
+#        @relationship_status = r_pass
+#    end
 end
 
 binding.pry
