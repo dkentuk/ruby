@@ -1,5 +1,4 @@
 require 'rspec'
-
 require './application'
 
 RSpec.configure do |config|

@@ -1,17 +1,3 @@
-#####################################################################
-#   A Ruby Application Exercise for Testing Circle                  #
-#   By David Kent                                                   #
-#   03/10/2014                                                      #
-#                                                                   #
-#   Notes:                                                          #
-#   This was my attempt at the Exercise. There are some areas left  #
-#   to be implemented as i don't have enough experience to it       #
-#   on my own. This is what i could do to the best of my ability    #
-#   with minimal help. All time afterwards will be utilised for     #
-#   learning and fixing up areas                                    #
-#                                                                   #
-#####################################################################
-
 require 'date'
 require 'pry'
 require 'yaml'
@@ -53,7 +39,6 @@ class FamilyMember < Person
     
     def initialize(fname, sname, ddob, p_rstatus = nil)
         @relationship_status = p_rstatus
-        #pulls the variables from the parent to be used in this inheritance class
         super(fname, sname, ddob)
     end
 end
@@ -66,14 +51,13 @@ class AddressBook
     end
     
     def add(person)
-        # checks to see if the person being entered is of class Person/FamilyMember
         if person.class == Person || person.class == FamilyMember
             @entries.push(person)
         else
             raise "Not Valid"
         end
     end
-
+    
     def list
         return @entries
     end     
@@ -81,17 +65,45 @@ class AddressBook
     #used to load in the YAML file and load it into the appilcation
     def load_yaml(filename)
         @data = YAML::load(File.open(filename))
-        #loops through each subsection under 'people' within the YAML file
+        
         data[:people].each do |info|
-            #assigns object to be a New Person with the information gathered from YAML
             object = Person.new(info[:fname], info[:surname], info[:dob])
-            #Calls the Add method
             add(object)  
+#    end
+        
+
+        
+#        file = File.open 'people_data.yml'
+#        data = YAML::load(file)
+        
+        #is a hash
+	    #data["people"].each do |yaml_person|
+	    
+        #person = Person.new(yaml_person["fname"], yaml_person["surname"], yaml_person["dob"])
+	    #end
+	    #yaml_person["emails"].each do |e|
+	    #person.add_emails(e)
+	    #end
+	
+	   #yaml_person["phones"].each do |e|
+	   #person.add_phone(e)
+	   #end
+       #@entries.push(person)
+        
+#      File.open 'people_data.yml' 
+#      data = YAML::load(file)
+        
+#        data[:people].each do |info|
+#            object = Person.new(info[:fname], info[:surname], info[:dob])
+#            
+#            add(object)
+        
+        
         end
     end
 end
 
-# Is used with the 'Pry' Gem. Powerful alternative to the standard IRB shell
+
 #binding.pry
         
        

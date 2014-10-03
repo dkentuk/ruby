@@ -14,6 +14,7 @@ describe "The person class" do
     
     it "should store emails" do
         person = Person.new("joe", "bloggs", "1 Jan 1990")
+        
         expect(person.emails).to eq([])
         
         person.add_email "joe@foo.com"
@@ -23,7 +24,8 @@ describe "The person class" do
     end
     
     it "should store phone numbers" do
-         person = Person.new("joe", "bloggs", "1 Jan 1990")
+        person = Person.new("joe", "bloggs", "1 Jan 1990")
+        
         expect(person.phone_number).to eq([])
         
         person.add_phone "07894555555"
@@ -34,16 +36,9 @@ describe "The person class" do
     
     it "should remove email" do
         person = Person.new("joe", "bloggs", "1 Jan 1990")
-        
         person.add_email "joe@foo.com"
-        
         person.remove_email 0
           
         expect(person.emails).to eq([])
-    end
-    
-    # exercise 2 to be done Q2
-    
-    # Q3
-       
+    end    
 end
