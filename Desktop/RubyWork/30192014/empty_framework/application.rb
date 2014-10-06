@@ -89,9 +89,16 @@ class AddressBook
             add(object)  
         end
     end
+            
+    def remove_name(p_name)
+    #to implement remove code by first name
+       # @entries.delete(p_name[:fname].to_s)
+    #@entries.delete_if { |x| x == p_name }
+        @entries.delete('p_name')
+    end
 end
 
 # Is used with the 'Pry' Gem. Powerful alternative to the standard IRB shell
-#binding.pry
+binding.pry
         
        
