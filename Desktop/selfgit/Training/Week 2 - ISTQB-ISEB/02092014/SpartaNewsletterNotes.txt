@@ -1,0 +1,30 @@
+The tester is testing 
+
+Locate Email Subscribe Button. Mod(Yes) Abi
+> Pre Condition > Already on the site
+Expected Result > able to locate subrice
+Post condition > Button found. Clicked On
+>No data
+
+
+Can we enter our email Trishuk
+Pre condition > Text Field/Valid Email 
+Expcted> They can enter email into textfield/Subsribe box
+Post condition> Correctly Verifies and enters
+> Data: Email of User
+
+Test to see if it's already been used Romeo
+Pre - ALready registed email
+Expected: can't sign up again
+Post : error message
+Data - efmail of user twice
+
+Test to recieve confirmation (David)
+Pre Conditions > Entered valid email address
+Expected > Recieve confirmation of sign up
+Post Condition > Recieve confirmation email
+
+
+
+Reguarly Bi Monthly Recieving
+Regualr New Letter

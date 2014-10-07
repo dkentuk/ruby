@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .bluesection {
+                background: blue;
+                height: 100px;
+                     
+            }
+            .redsection {
+                background: red;
+                height: 100px;
+                 
+            }
+            .asidesection {
+                background: yellow;
+                
+            }
+            @media screen and (min-width: 500px) {
+                section{
+                    width: 50%;
+                    float: left;
+                }
+            }
+            @media screen and (min-width: 800px) {
+                /* If the screen is over 800px, make the section 40% and aside 20%*/
+                section{
+                    width: 40%; 
+                    float: left;
+    
+                   
+                }
+                aside{
+                    width: 20%;
+                    float: left;
+                    
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="bluesection">
+            <p>Blue Section</p>
+        </section>
+        <section class="redsection">
+            <p>Red Section</p>
+        </section>
+        <aside class="asidesection">
+            <p>Aside Section</p>
+        </aside>
+        <footer>
+        </footer>
+    </body>
+</html>

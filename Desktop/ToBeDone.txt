@@ -1,0 +1,26 @@
+AddressBook Project
+
+Phone Verification
+(020\d{2})\s?(\d{6})
+
+Email Verification
+(\w+@[a-zA-z_]+?\.[a-zA-Z_]{2,5})
+
+G.Sub()
+>> "hello".sub('l', '*')
+=> "he*lo"
+>> "hello".gsub('l', '*')
+=> "he**o"
+
+3. Add a method to remove people from the AddressBook based on first name. Use TDD. ((Atempted))
+6. ?????(optional) Split your Person, FamilyMember and AddressBook classes into separate files, and split the tests into corresponding separate files. Ensure the tests can all be executed with RSpec.
+7. (optional) Add a search() method to address book that allows a user to search for people by matching against first name or surname.
+8. ????(optional) Add a to_h() method to Address Book that returns the contents of the address book as a well-formatted hash.
+9. (optional) Add a README.md file to your project explaining how to use your AddressBook. You might need to look up the GFM syntax.
+
+Other Exercises
+
+1. Write your own sorting method. It should sort items in the array in alphabetical or numeric order. Assume that the array will only hold integers and strings.
+7. Practice capturing MatchData objects using match(), and ensure you’re comfortable accessing the data in MatchObject instances.
+8. >>>> Get the highest score at http://regex.alf.nu (don’t spend more than an hour on this on Friday).
+9. (Optional) Set up awesome_print in your .prycr and .irbrc files (Jane and Aaron can help with this. My dotfiles might be useful).
