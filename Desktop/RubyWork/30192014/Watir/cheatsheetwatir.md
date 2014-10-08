@@ -5,33 +5,79 @@ Some of it may not make sense, don't worry
 
 ### So where do you want to start M8?
 > I want to start by getting it going!
+
 Well, you got to do this:
 ```ruby
 require 'watir'
 browser = Watir::Browser.new :firefox
 ```
 >I got a browser window open, now what?
+
 Well, I assume you want to go to a specific website!
 ```ruby
 browser.goto "https://www.yoursite.com"
 ```
 > Well, that was easy!
+
 Yup, that is the easy part done. Now it all depends on what you want to do next!
+
 > I don't know, just put down what you know!
+
 Okay, will do.
 
 ### Email + Password Login
+
+Use this, this will cover most email logins
+
 ```ruby
-browser.text_field(id: "signup_email").when_present.set "dk654@hotmail.co.uk"
-browser.text_field(id: 'signup_password').when_present.set 'tumblr@comp118'
+browser.text_field(id: "signup_email").when_present.set "email"
+browser.text_field(id: 'signup_password').when_present.set 'password'
 browser.button(:id, "signup_forms_submit").click
 ```
 
 ### Elements
 Use this to find generic parts of web page
+
+| Elements              | How to Access it?                             | Working with it                           |
+| --------------------- | --------------------------------------------- | ----------------------------------------- |
+| Text Box or Text Area | t = browser.text_field(:name, 'username')     |t.set "test"                               |
+| Button                | b = browser.button(:value, 'Click Here')      |b.click                                    |    
+| Link                  | l = browser.link(:url, "http://google.com")   |l.click                                    |
+| Drop-Down List        | d = browser.select_list(:name, /country/)     |d.select 'UK'                              |
+| Check Box             | c = browser.checkbox(:id, /unsubscribe/)      |c.set / c.clear                            |
+| Radio Button          | r = browser.radio(:name, button_name)         |r.set / r.clear                            |
+| Table                 | tbl = $ie.table(:id, /grades/)                |tbl[row][col].method e.g. tbl[2][1].text   |
+
+> But dude, that seems like a lot of things. What happens if I can't see what it is that I've seleceted?
+
+Hahah, Well, how you would you expose it?
+
+> Umm,
+
+```ruby
+element.flash
+```
+
+> :O
+
+Show me the money >:D OR better yet, show me what you can see
+
+#### Checking Contents:
+
+```ruby 
+browser.html # return html of page or element
+browser.text # return text of page or element
+browser.text.include? 'Pickaxe' # return true if the text appears on the page
+browser.table(:id, 'jukebox_listing').to_a # return contents of a table as an array
+browser.show_frames # identify the frames on a page
+browser.text_fields.show # show info for all elements of a particular type on a pag
+```
+                                                                        
 ```ruby
 browser.element(:id, "new_post_label_photo").click
 ```
+
+### Brow
 
 ### Text Field + Input + Misc
 ```ruby

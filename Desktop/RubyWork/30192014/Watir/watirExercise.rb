@@ -6,7 +6,7 @@ require 'watir'
 browser = Watir::Browser.new
 browser.goto "https://amazon.co.uk"
 p_i = browser.text_field :id, "twotabsearchtextbox"
-p_i.set('Eloquent Ruby')
+p_i.set("Eloquent Ruby")
 button = browser.button :text, "Go"
 button.click
 ##

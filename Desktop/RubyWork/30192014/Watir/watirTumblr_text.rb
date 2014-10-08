@@ -9,16 +9,15 @@ browser.text_field(:id, "signup_email").when_present.set "dk654@hotmail.co.uk"
 browser.text_field(:id, "signup_password").when_present.set "tumblr@comp118"
 browser.button(:id, "signup_forms_submit").click
 
-## Code to add chat and check
-browser.a(:id, "new_post_label_chat").click
+#Text Load
+browser.element(:id, "new_post_label_text").click
+browser.send_keys("test_string")
+browser.text_field(:id, "post_one").set("what a test")
+button = browser.button :text, "Post"
+button.click
 
-browser.text_field(:id, "post_one").set "Chat Title"
-browser.textarea(:id, "post_two").set "This is a chat"
-browser.button(:class, "create_post_button chrome blue txt ").click
+#test for test string within the dashboard
 browser.div(:class, "post_wrapper").wait_until_present
+#puts foo in the console 
+puts "foo " if browser.text.include? "test_string"
 
-if browser.div(:class, "post_title").text == "Chat Title"
-    puts "SUCCESS"
-end
-
-browser.close
