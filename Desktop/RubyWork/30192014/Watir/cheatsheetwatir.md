@@ -62,7 +62,7 @@ element.flash
 
 Show me the money >:D OR better yet, show me what you can see
 
-#### Checking Contents:
+### Checking Contents:
 
 ```ruby 
 browser.html # return html of page or element
@@ -73,27 +73,25 @@ browser.show_frames # identify the frames on a page
 browser.text_fields.show # show info for all elements of a particular type on a pag
 ```
                                                                         
+> Phew, that's a lot. Im gonna need some space
+
+Let me Resize that for you
+
 ```ruby
-browser.element(:id, "new_post_label_photo").click
+browser.window.resize_to 1600, 1200
 ```
 
-### Brow
+> Much better
 
-### Text Field + Input + Misc
+Time for a selfie, let me take a look at you
+
 ```ruby
-browser.text_field(:id, "post_one").set("what a test")
+browser.screenshot.save "screenshot.png"
 ```
-Send keys to browser
-```
-browser.send_keys("test_string")
-```
-Looks in the browser div for a certain class. also it will wait until it is present
-```
-browser.div(:class, "post_wrapper").wait_until_present
-```
+
 
 #### Random Methods
-```
+```ruby
 require 'watir'
 browser = Watir::Browser.new
 browser.methods - Object.new.methods
