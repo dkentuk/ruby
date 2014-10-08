@@ -1,4 +1,0 @@
-#source ruby-gems.org
-
-gem 'selenium-webdriver'
-gem 'pry'

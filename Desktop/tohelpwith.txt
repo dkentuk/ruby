@@ -1,8 +1,0 @@
-Win32 Console
-Ansicon . 32Bit.
-rspec ¬
-
-
-Splitting
-require './addressBook'
-require './familyMember'
